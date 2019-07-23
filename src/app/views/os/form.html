@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row justify-content-sm-center">
+    <div class="col-sm-8">
+      <h2 class="title">{{ vm.title }}</h2>
+      <form>
+        <ui-input
+          type="date"
+          ng-model="vm.record.dataEntrada"
+          label="Data Entrada"
+        ></ui-input>
+        <ui-input type="date" ng-model="vm.record.dataSaida" label="Data Saída"> </ui-input>
+        <div class="form-group">
+          <label>Cliente</label>
+          <select ng-selected="vm.cliente.nome" ng-model="vm.cliente" class="form-control" ng-options="i.nome for i in vm.clientes track by $index"></select>
+          </select>
+        </div>
+        <label>Item</label>
+        <div class="form-group form-inline">
+          <select style="width: 88%;" ng-model="vm.item" class="form-control" ng-options="i.descricao for i in vm.itens"></select>
+          </select>
+          <button ng-disabled="!vm.item" ng-click="vm.incluirItem()" class="btn btn-success" style="margin-left: 2%;">Incluir</a>
+        </div>
+        <ui-table cols="vm.cols" data="vm.itensAdicionados">
+            <actions>
+              <button
+                ng-click="vm.removerItem($parent.$rec)"
+                class="btn btn-sm btn-danger"
+                type="button"
+              >
+                Remover
+              </button>
+            </actions>
+          </ui-table>
+        <h6 style="float: right;" class="form-group"><b>Valor Total:</b> {{vm.record.valorTotal | number: 2}}</h6>
+
+        <button ng-click="vm.save()" type="button" class="btn btn-primary">
+          <span ng-show="!vm._id">Salvar Registro</span>
+          <span ng-show="vm._id">Atualizar Registro</span>
+        </button>
+        <a ui-sref="app.os.list" class="btn btn-danger">Cancelar</a>
+      </form>
+    </div>
+  </div>
+</div>

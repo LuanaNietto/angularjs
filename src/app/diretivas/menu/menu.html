@@ -1,0 +1,10 @@
+<div class="sidebar-sticky">
+    <ul class="nav flex-column">
+        <li ng-repeat="item in itens" class="nav-item">
+            <a class="nav-link active" ui-sref="{{item.state}}">
+                <span class="feather {{item.icon}}"></span>
+                {{item.name}}
+            </a>
+        </li>
+    </ul>
+</div>

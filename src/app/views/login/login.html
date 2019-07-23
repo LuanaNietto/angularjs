@@ -1,0 +1,44 @@
+<div class="login container-fluid text-center">
+  <div class="row justify-content-center">
+    <form class="form-signin col-5">
+      <img
+        class="mb-4"
+        src="assets/bootstrap-solid.svg"
+        alt=""
+        width="72"
+        height="72"
+      />
+      <h1 class="h3 mb-3 font-weight-normal">Entrar no sistema</h1>
+      <label for="inputEmail" class="sr-only">E-mail</label>
+      <input
+        type="email"
+        id="inputEmail"
+        class="form-control"
+        placeholder="E-mail"
+        required
+        autofocus
+      />
+      <label for="inputPassword" class="sr-only">Senha</label>
+      <input
+        type="password"
+        id="inputPassword"
+        class="form-control"
+        placeholder="Senha"
+        required
+      />
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me" /> Lembrar de mim
+        </label>
+      </div>
+      <button
+        ng-click="vm.login()"
+        class="btn btn-lg btn-primary btn-block"
+        type="button"
+      >
+        Entrar
+      </button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th ng-repeat="$col in $ctrl.cols track by $index" scope="col">
+        {{ $col.label }}
+      </th>
+      <th ng-if="$ctrl.showActions" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="$rec in $ctrl.data track by $index">
+      <td ng-repeat="$col in $ctrl.cols">
+        <span ng-if="$col.type == 'number'">{{
+          $rec[$col.value] | number: 2
+        }}</span>
+        <span ng-if="$col.type == 'date'">{{
+          $rec[$col.value] | date: "dd/MM/yyyy"
+        }}</span>
+        <span ng-if="$col.type == 'text'">{{ $rec[$col.value] }}</span>
+      </td>
+      <td
+        ng-if="$ctrl.showActions"
+        ng-transclude="actions"
+        style="text-align: right"
+      ></td>
+    </tr>
+  </tbody>
+</table>

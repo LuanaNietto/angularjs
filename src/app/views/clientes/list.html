@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline" ng-submit="vm.load()">
+      <input
+        ng-model="vm.filterValue"
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Buscar"
+        aria-label="Buscar"
+      />
+      <button
+        ng-click="vm.buscar(vm.filterValue)"
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="submit"
+      >
+        Buscar
+      </button>
+    </form>
+    <a class="btn btn-outline-info" ui-sref="app.cliente.new">Novo registro</a>
+  </nav>
+  <ui-table cols="vm.cols" data="vm.records">
+    <actions>
+      <a
+        class="btn btn-sm btn-success"
+        ui-sref="app.cliente.edit({id: $parent.$rec._id})"
+        >Editar</a
+      >
+      <button
+        ng-click="vm.excluir($parent.$rec._id)"
+        class="btn btn-sm btn-danger"
+        type="button"
+      >
+        Excluir
+      </button>
+    </actions>
+  </ui-table>
+</div>

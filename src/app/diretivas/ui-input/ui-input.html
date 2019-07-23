@@ -1,0 +1,12 @@
+<div class="form-group">
+  <label>{{ label }}</label>
+  <input
+    type="{{ type || 'text' }}"
+    ng-model="modelValue"
+    class="form-control"
+    ng-disabled="{{ block }}"
+  />
+  <small ng-show="msg" class="form-text text-{{ msgClass || 'muted' }}">{{
+    msg
+  }}</small>
+</div>
