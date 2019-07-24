@@ -20,39 +20,8 @@ module.exports = webpackMerge(common.config, {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader?sourceMap=false&importLoaders=1&minimize=true',
-          {
-            loader: 'postcss-loader', options: {
-              config: {
-                plugins: [
-                  require('autoprefixer')({})
-                ]
-              }
-            }
-          }
-        ],
-        exclude: /node_modules/
-      },
-      {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader?sourceMap=false&importLoaders=1&minimize=true',
-          'sass-loader',
-          {
-            loader: 'postcss-loader', options: {
-              config: {
-                plugins: [
-                  require('autoprefixer')({})
-                ]
-              }
-            }
-          }
-        ],
-        exclude: /node_modules/
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
