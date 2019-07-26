@@ -15,8 +15,8 @@
           label="Valor"
         ></ui-input>
         <button ng-click="vm.save()" type="button" class="btn btn-primary">
-          <span ng-show="!vm._id">Salvar Registro</span>
-          <span ng-show="vm._id">Atualizar Registro</span>
+          <span ng-show="!vm.id">Salvar Registro</span>
+          <span ng-show="vm.id">Atualizar Registro</span>
         </button>
         <a ui-sref="app.item.list" class="btn btn-danger">Cancelar</a>
       </form>

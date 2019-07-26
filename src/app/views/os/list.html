@@ -22,11 +22,11 @@
     <actions>
       <a
         class="btn btn-sm btn-success"
-        ui-sref="app.os.edit({id: $parent.$rec._id})"
+        ui-sref="app.os.edit({id: $parent.$rec.id})"
         >Editar</a
       >
       <button
-        ng-click="vm.excluir($parent.$rec._id)"
+        ng-click="vm.excluir($parent.$rec.id)"
         class="btn btn-sm btn-danger"
         type="button"
       >
