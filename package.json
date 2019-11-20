@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.19",
-    "angular": "^1.7.2",
+    "angular": "^1.7.9",
     "bootstrap": "^4.1.3",
     "feather-font": "git+https://github.com/AT-UI/feather-font.git",
     "jquery": "^3.3.1",
